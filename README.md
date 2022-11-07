@@ -4,9 +4,11 @@
 
 ### Este projeto tem o objetivo de facilitar a consulta de dados financeiros da bolsa de valores, criação de análises, novos indicadores e gráficos.
 
-
-Exemplo de consulta
 #
+
+Exemplo de consulta:
+
+
 ```python
 from enums import *
 import getDados
@@ -22,13 +24,20 @@ df_yahoo = etl.padroniza_df_yahoo(df_yahoo=df_yahoo, papel=papel)
 df_yahoo.head(3)
 ```
 
+#
+
 |    Date    | Papel |  Abertura |    Alta   |   Baixa   | Fechamento |  Volume  |
 |:----------:|:-----:|:---------:|:---------:|:---------:|:----------:|:--------:|
 | 2021-11-08 | BBAS3 | 26.980865 | 27.594912 | 26.906435 |  27.427444 |  7979400 |
 | 2021-11-09 | BBAS3 | 28.283393 | 28.488077 | 27.390234 |  27.390234 | 20778600 |
 | 2021-11-10 | BBAS3 | 27.464658 | 28.906738 | 27.446050 |  28.646235 | 20395200 |
 
-##### Exemplo de análise com indicadores
+
+#
+
+
+Exemplo de análise com indicadores
+
 
 ```python
 from enums import *
@@ -55,8 +64,11 @@ df_yahoo = etl.ifr(df=df_yahoo, campo='Fechamento', periodo=14)
 df_yahoo[50:53]
 ```
 
+#
+
 |    Date    | Papel |  Abertura |    Alta   |   Baixa   | Fechamento |  Volume  |      MMS9 |     MME50 | DesvioPadrao | BandaSuperior | BandaInferior |       IFR |
 |:----------:|:-----:|:---------:|:---------:|:---------:|:----------:|:--------:|----------:|----------:|-------------:|--------------:|--------------:|----------:|
 | 2022-01-20 | BBAS3 | 29.501790 | 29.871628 | 29.397475 |  29.587137 | 11361000 | 28.484997 | 28.477371 |     0.816811 |     29.873303 |     26.606061 | 66.939661 |
 | 2022-01-21 | BBAS3 | 29.539721 | 29.909561 | 29.293161 |  29.587137 | 14360700 | 28.739985 | 28.527102 |     0.899354 |     30.262535 |     26.665119 | 66.939661 |
 | 2022-01-24 | BBAS3 | 29.520755 | 30.108705 | 29.350062 |  29.729383 | 15750300 | 28.998135 | 28.580680 |     0.976760 |     30.651838 |     26.744797 | 68.248447 |
+
