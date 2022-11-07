@@ -6,7 +6,7 @@
 
 #
 Exemplo de consulta
-#
+
 ```python
 from enums import *
 import getDados
@@ -21,7 +21,7 @@ df_yahoo = etl.padroniza_df_yahoo(df_yahoo=df_yahoo, papel=papel)
 
 df_yahoo.head(3)
 ```
-#
+
 
 |    Date    | Papel |  Abertura |    Alta   |   Baixa   | Fechamento |  Volume  |
 |:----------:|:-----:|:---------:|:---------:|:---------:|:----------:|:--------:|
@@ -31,7 +31,7 @@ df_yahoo.head(3)
 
 #
 Exemplo de análise com indicadores
-#
+
 ```python
 from enums import *
 import getDados
@@ -53,7 +53,7 @@ df_yahoo = etl.ifr(df=df_yahoo, campo='Fechamento', periodo=14)
 
 df_yahoo[50:53]
 ```
-#
+
 |    Date    | Papel |  Abertura |    Alta   |   Baixa   | Fechamento |  Volume  |      MMS9 |     MME50 | DesvioPadrao | BandaSuperior | BandaInferior |       IFR |
 |:----------:|:-----:|:---------:|:---------:|:---------:|:----------:|:--------:|----------:|----------:|-------------:|--------------:|--------------:|----------:|
 | 2022-01-20 | BBAS3 | 29.501790 | 29.871628 | 29.397475 |  29.587137 | 11361000 | 28.484997 | 28.477371 |     0.816811 |     29.873303 |     26.606061 | 66.939661 |
@@ -61,7 +61,7 @@ df_yahoo[50:53]
 | 2022-01-24 | BBAS3 | 29.520755 | 30.108705 | 29.350062 |  29.729383 | 15750300 | 28.998135 | 28.580680 |     0.976760 |     30.651838 |     26.744797 | 68.248447 |
 #
 Exemplo de análise com gráfico
-#
+
 ```python
 from enums import *
 import getDados
