@@ -131,3 +131,4 @@ class papeis(Enum):
     W1MG34 = 'W1MG34.SA'
     DOLFUT = 'USDBRL=x'
     WINFUT = '^BVSP'
+
