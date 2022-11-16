@@ -17,6 +17,8 @@ def padroniza_df_yahoo(df_yahoo: pd.DataFrame, papel: papeis):
     df_yahoo.rename(columns=config.DE_PARA_COLS_YAHOO, inplace=True)
     df_yahoo['Papel'] = papel._name_
     df_yahoo = df_yahoo[['Papel', 'Abertura', 'Alta', 'Baixa', 'Fechamento', 'Volume']]
+    df_yahoo.index.names = ['Datas']
+    df_yahoo.index = df_yahoo.index.strftime('%Y-%m-%d')
     return df_yahoo
 
 
@@ -133,5 +135,5 @@ def ifr(df: pd.DataFrame, campo:str='Fechamento', periodo:int=14):
         df.loc[i, 'MediaMovelPerda'] = (df.loc[i-1, 'MediaMovelPerda'] * (periodo-1) + df.loc[i, 'perda']) / periodo
     df['IFR'] = 100 - (100 / (1 + (df.MediaMovelGanho / df.MediaMovelPerda)))
     df.drop(columns=['Dif', 'ganho', 'perda', 'MediaMovelGanho', 'MediaMovelPerda'], inplace=True)
-    df.set_index('Date', inplace=True)
+    df.set_index('Datas', inplace=True)
     return df
